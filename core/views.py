@@ -10,6 +10,9 @@ def frontpage(request):
 def signup(request):
     return render(request, 'core/signup.html')
 
+def login(request):
+    return render(request, 'core/login.html')
+
 def shop(request):
     products = Product.objects.all()
     categories = Category.objects.all()
