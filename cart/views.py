@@ -23,7 +23,7 @@ def update_cart(request, product_id, action):
         cart.add(product_id, -1, True)
 
     product = Product.objects.get(pk=product_id)
-    quantity = cart.get_item(product_id)
+    quantity = cart.get_item(product_id)['quantity']
 
     item = {
         'product': {
@@ -48,3 +48,6 @@ def checkout(request):
 
 def hx_menu_cart(request):
     return render(request, 'cart/menu_cart.html')
+
+def hx_cart_total(request):
+    return render(request, 'cart/partials/cart_total.html')
