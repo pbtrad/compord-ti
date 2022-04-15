@@ -23,6 +23,7 @@ from cart.views import add_to_cart, cart, checkout
 urlpatterns = [
     path('', include('core.urls')),
     path('cart/', include('cart.urls')),
+    path('order/', include('order.urls')),
     path('jet/', include('jet.urls', 'jet')),
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('admin/', admin.site.urls),
